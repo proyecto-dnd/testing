@@ -1,0 +1,55 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    gradlePluginPortal()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"
+    classpath "io.qameta.allure:allure-gradle:2.8.1"
+  }
+}
+
+apply plugin: "kotlin"
+apply plugin: "io.qameta.allure"
+
+repositories {
+  mavenCentral()
+  gradlePluginPortal()
+}
+
+ext {
+  selenideVersion = "7.1.0"
+  kotlinVersion = "1.9.22"
+  junitVersion = "5.10.2"
+  slf4jVersion = "2.0.12"
+  allureVersion = "2.25.0"
+}
+
+dependencies {
+  testImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+  testImplementation "com.codeborne:selenide:$selenideVersion"
+  testRuntimeOnly "org.slf4j:slf4j-simple:$slf4jVersion"
+  testImplementation "io.qameta.allure:allure-junit5:$allureVersion"
+  testImplementation "io.qameta.allure:allure-selenide:2.25.0"
+}
+
+test {
+  useJUnitPlatform()
+  systemProperties = [
+          'file.encoding'    : 'UTF-8',
+          'selenide.headless': 'true',
+          'BUILD_URL'        : System.getenv()['BUILD_URL'],
+  ]
+
+  testLogging {
+    events "PASSED", "FAILED", "SKIPPED"
+  }
+
+  systemProperty 'allure.results.directory', file('build/allure-results')
+}
+
+task serveAllureReport(type: Exec) {
+  dependsOn 'test'
+  commandLine 'allure', 'serve', file('build/allure-results').absolutePath
+}
