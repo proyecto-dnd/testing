@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a2f55ad-2450-4b59-9d45-8230e4a572e5" name="Changes" comment="" />
+    <list default="true" id="6a2f55ad-2450-4b59-9d45-8230e4a572e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/triggered-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/triggered-tests.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,25 +58,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.LoginTest.successfulLogin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SideBarTest.createCampaign.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SideBarTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SignUpTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/iland/CTD-HandsOn/T2-Bimestres/PI_2/testing/src/test/kotlin/com/dicelogger/testing/dataProviders&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.LoginTest.successfulLogin.executor": "Run",
+    "Gradle.SideBarTest.createCampaign.executor": "Run",
+    "Gradle.SideBarTest.executor": "Run",
+    "Gradle.SignUpTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/iland/CTD-HandsOn/T2-Bimestres/PI_2/testing/src/test/kotlin/com/dicelogger/testing/dataProviders",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\iland\CTD-HandsOn\T2-Bimestres\PI_2\testing\src\test\kotlin\com\dicelogger\testing\dataProviders" />
@@ -249,7 +255,7 @@
       <workItem from="1709246369993" duration="46000" />
       <workItem from="1709246423641" duration="14122000" />
       <workItem from="1709331689150" duration="7892000" />
-      <workItem from="1709590344962" duration="5807000" />
+      <workItem from="1709590344962" duration="6669000" />
     </task>
     <servers />
   </component>
