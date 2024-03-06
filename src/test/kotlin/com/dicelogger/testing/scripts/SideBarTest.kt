@@ -13,6 +13,7 @@ import io.qameta.allure.selenide.AllureSelenide
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
@@ -39,7 +40,7 @@ class SideBarTest {
         landingPage.login("tester@gmail.com", "Password123")
     }
 
-    @ParameterizedTest
+    @ParameterizedTest @Tag("smoke") @Tag("campaign")
     @MethodSource("com.dicelogger.testing.dataProviders.Data#campaignData")
     fun createCampaign(title: String, description: String, mainImage: String, images: List<String>) {
         val campaignsPage = sidebar.clickCampaignsBtn()
@@ -57,7 +58,7 @@ class SideBarTest {
 //        assertEquals(title, newCampaignPage.getText(Selectors.byId("nameCampaign")), "The title is not the expected one")
     }
 
-    @ParameterizedTest
+    @ParameterizedTest @Tag("smoke") @Tag("character")
     @MethodSource("com.dicelogger.testing.dataProviders.Data#characterData")
     fun createCharacter() {
         val charactersPage = sidebar.clickCharactersBtn()

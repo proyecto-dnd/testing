@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a2f55ad-2450-4b59-9d45-8230e4a572e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/triggered-tests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/triggered-tests.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/dataProviders/Data.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/dataProviders/Data.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/pages/SignUpPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/pages/SignUpPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/scripts/LoginTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/scripts/LoginTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/scripts/SideBarTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/scripts/SideBarTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/scripts/SignUpTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/dicelogger/testing/scripts/SignUpTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +260,7 @@
       <workItem from="1709246423641" duration="14122000" />
       <workItem from="1709331689150" duration="7892000" />
       <workItem from="1709590344962" duration="8179000" />
-      <workItem from="1709735027768" duration="1353000" />
+      <workItem from="1709735027768" duration="2667000" />
     </task>
     <servers />
   </component>

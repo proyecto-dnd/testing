@@ -10,6 +10,7 @@ import io.qameta.allure.selenide.AllureSelenide
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import org.openqa.selenium.chrome.ChromeOptions
@@ -30,7 +31,7 @@ class SignUpTest {
         UtilMethods.setUp()
     }
 
-    @ParameterizedTest
+    @ParameterizedTest @Tag("smoke") @Tag("signup")
     @MethodSource("com.dicelogger.testing.dataProviders.Data#registrationData")
     fun successfulRegistration(username: String, displayname: String, email: String, password: String) {
         val signUpPage = landingPage.clickSignUpBtn()
