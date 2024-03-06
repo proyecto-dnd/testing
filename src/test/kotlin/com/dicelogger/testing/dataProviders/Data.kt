@@ -8,7 +8,7 @@ object Data {
     @JvmStatic
     fun registrationData(): Stream<Arguments> = Stream.of(
         Arguments.of(
-            "Andres", "Galvan", UtilMethods.getRandomUsername(), UtilMethods.getRandomEmail(), "Password123", "Password123"
+            UtilMethods.getRandomUsername(), "Andy", UtilMethods.getRandomEmail(), "Password123"
         )
     )
 
