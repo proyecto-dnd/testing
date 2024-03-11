@@ -1,12 +1,14 @@
 package com.dicelogger.testing.pages
 
-import com.codeborne.selenide.Selectors.byCssSelector
-import com.codeborne.selenide.Selectors.byId
+import com.codeborne.selenide.Selectors.*
+import org.openqa.selenium.By
 
-class SignUpPage : BasePage() {
+class SignUpPage : BasePage<SignUpPage>() {
+    override val uniqueLocator: By = byId("displayname")
+
     private val pageTitle = byCssSelector(".AuthForm_sectionAuth__EZb5Y h1")
-    private val userName = byId("user")
-    private val displayName = byId("displayName")
+    private val userName = byId("username")
+    private val displayName = byId("displayname")
     private val email = byId("email")
     private val password = byId("password")
     private val submitBtn = byCssSelector(".Button_button__W_5Ku")
@@ -33,7 +35,7 @@ class SignUpPage : BasePage() {
 
     fun clickSubmitBtn(): LandingPage {
         click(submitBtn)
-        return LandingPage()
+        return LandingPage().waitForSignUpPageLoad()
     }
 
     fun fillForm(username: String, displayname: String, email: String, password: String): LandingPage {

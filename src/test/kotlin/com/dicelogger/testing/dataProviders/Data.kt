@@ -15,7 +15,7 @@ object Data {
     @JvmStatic
     fun loginData(): Stream<Arguments> = Stream.of(
         Arguments.of(
-            "tester@gmail.com", "Password123"
+            "8il.andre@gmail.com", "Password123"
         )
     )
 

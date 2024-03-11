@@ -1,8 +1,11 @@
 package com.dicelogger.testing.pages
 
 import com.codeborne.selenide.Selectors.*
+import org.openqa.selenium.By
 
-class CampaignsPage : BasePage() {
+class CampaignsPage : BasePage<CampaignsPage>() {
+    override val uniqueLocator: By = byId("Mis campañas")
+
     private val pageTitle = byClassName("List_title__GNB9k")
     private val newCampaignBtn = byId("Mis campañas")
 
@@ -12,6 +15,6 @@ class CampaignsPage : BasePage() {
 
     fun clickNewCampaignBtn(): NewCampaignPage {
         clickSvgObjectWithJs(newCampaignBtn)
-        return NewCampaignPage()
+        return NewCampaignPage().waitForPageLoad()
     }
 }

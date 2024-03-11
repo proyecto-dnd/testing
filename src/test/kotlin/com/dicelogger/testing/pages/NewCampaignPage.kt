@@ -1,8 +1,11 @@
 package com.dicelogger.testing.pages
 
 import com.codeborne.selenide.Selectors
+import org.openqa.selenium.By
 
-class NewCampaignPage : BasePage() {
+class NewCampaignPage : BasePage<NewCampaignPage>() {
+    override val uniqueLocator: By = Selectors.byId("nameCampaign")
+
     private val pageTitle = Selectors.byClassName("NewLayout_header__vpog2")
     private val titleField = Selectors.byId("nameCampaign")
     private val descriptionField = Selectors.byId("description")

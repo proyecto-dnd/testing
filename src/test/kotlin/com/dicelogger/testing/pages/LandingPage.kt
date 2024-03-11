@@ -2,8 +2,12 @@ package com.dicelogger.testing.pages
 
 import org.openqa.selenium.By
 
-class LandingPage : BasePage() {
-    private val pageTitle = By.cssSelector(".Navbar_logo__MBvQU h1")
+class LandingPage : BasePage<LandingPage>() {
+    override val uniqueLocator: By = By.cssSelector("h1")
+//    override val uniqueLocator: By = By.linkText("¡COMIENZA TU AVENTURA!")
+    private val signUpUniqueLocator = By.className("Layout_logo__FBH86")
+
+    private val pageTitle = By.cssSelector(".Home_home__GWOui h2")
     private val pageLogo = By.xpath("body > main > section.Hero_wrapper__EBHHK.section > section > div > div > svg > path")
 
     private val loginBtn = By.className("LoginPopup_button__AQ071")
@@ -23,9 +27,14 @@ class LandingPage : BasePage() {
         return getText(pageTitle)
     }
 
+    fun waitForSignUpPageLoad() : LandingPage {
+        waitForPageLoad(signUpUniqueLocator)
+        return this
+    }
+
     fun clickSignUpBtn(): SignUpPage {
         click(signUpBtn)
-        return SignUpPage()
+        return SignUpPage().waitForPageLoad()
     }
 
     fun enterEmail(name: String) {
@@ -41,6 +50,6 @@ class LandingPage : BasePage() {
         enterEmail(email)
         enterPassword(password)
         click(loginSubmitButton)
-        return HomePage()
+        return HomePage().waitForPageLoad()
     }
 }

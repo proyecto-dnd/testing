@@ -11,9 +11,13 @@ class Constants {
         const val NEW_CHARACTERS_URL = "https://proyecto-dnd.vercel.app/characters/new"
         const val MANUALS_URL = "https://proyecto-dnd.vercel.app/manuals"
 
+        const val PLAYER_MANUAL_URL = "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/proyecto-dnd/resources/main/Manual%20del%20jugador%20-%205ta%20Edici%C3%B3n.pdf"
+        const val MASTER_MANUAL_URL = "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/proyecto-dnd/resources/main/Manual%20del%20master%20-%205ta%20Edici%C3%B3n.pdf"
+        const val MONSTER_MANUAL_URL = "https://drive.google.com/file/d/1-WFwUyRIr1BjwGh7HHLcBvdPdX5abpsQ/view?usp=drive_link"
+
         const val EXPECTED_LANDING_PAGE_TITLE = "Gestiona tus campañas de\n" + "Dungeons & Dragons"
         const val EXPECTED_SIGNUP_TITLE = "Crear cuenta"
-        const val EXPECTED_HOMEPAGE_TITLE = "Bienvenido"
+        const val EXPECTED_HOMEPAGE_TITLE = "¡Bienvenido a Dicelogger!"
         const val EXPECTED_CAMPAIGNS_TITLE = "Mis campañas"
         const val EXPECTED_CHARACTERS_TITLE = "Mis personajes"
         const val EXPECTED_MANUALS_TITLE = "Manuales"

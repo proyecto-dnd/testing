@@ -2,9 +2,12 @@ package com.dicelogger.testing.pages
 
 import com.codeborne.selenide.Selectors.byClassName
 import com.codeborne.selenide.Selectors.byCssSelector
+import org.openqa.selenium.By
 
-class SideBarMenu : BasePage() {
-    private val logoImg = byClassName("Layout_logo__FBH86")
+class SideBarMenu : BasePage<SideBarMenu>() {
+    override val uniqueLocator: By = byClassName("Layout_logo__FBH86")
+
+//    private val logoImg = byClassName("Layout_logo__FBH86")
 
     private val homeBtn = byCssSelector("a[href='/']")
     private val campaignsBtn = byCssSelector("a[href='/campaigns']")
@@ -17,27 +20,27 @@ class SideBarMenu : BasePage() {
 
     fun clickHomeBtn() : HomePage {
         click(homeBtn)
-        return HomePage()
+        return HomePage().waitForPageLoad()
     }
 
     fun clickCampaignsBtn() : CampaignsPage {
         click(campaignsBtn)
-        return CampaignsPage()
+        return CampaignsPage().waitForPageLoad()
     }
 
     fun clickCharactersBtn() : CharactersPage {
         click(charactersBtn)
-        return CharactersPage()
+        return CharactersPage().waitForPageLoad()
     }
 
     fun clickManualsBtn() : ManualsPage {
         click(manualsBtn)
-        return ManualsPage()
+        return ManualsPage().waitForPageLoad()
     }
 
     fun clickSuscriptionsBtn() : SuscriptionsPage {
         click(suscriptionsBtn)
-        return SuscriptionsPage()
+        return SuscriptionsPage().waitForPageLoad()
     }
 
     fun clickAddBtn() {
