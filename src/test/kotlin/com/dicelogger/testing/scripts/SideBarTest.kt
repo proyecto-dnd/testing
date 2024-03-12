@@ -37,46 +37,49 @@ class SideBarTest {
 //        Selenide.open(Constants.LANDING_URL)
 //        Configuration.headless = false
 //        Configuration.holdBrowserOpen = true
-        landingPage.login("tester@gmail.com", "Password123")
+        landingPage.login("8il.andre@gmail.com", "Password123")
     }
 
-    @ParameterizedTest @Tag("smoke") @Tag("campaign")
+    @ParameterizedTest
+//    @Tag("smoke")
+    @Tag("campaign")
     @MethodSource("com.dicelogger.testing.dataProviders.Data#campaignData")
     fun createCampaign(title: String, description: String, mainImage: String, images: List<String>) {
         val campaignsPage = sidebar.clickCampaignsBtn()
-//        Thread.sleep(3000)
         assertEquals(Constants.CAMPAIGNS_URL, campaignsPage.getPageUrl(), "The current URL is not the expected one")
         assertEquals(Constants.EXPECTED_CAMPAIGNS_TITLE, campaignsPage.getTitle(), "The current title is not the expected one")
 
         val newCampaignPage = campaignsPage.clickNewCampaignBtn()
-//        Thread.sleep(1000)
         assertEquals(Constants.NEW_CAMPAIGN_URL, newCampaignPage.getPageUrl(), "The current URL is not the expected one")
+        assertEquals(Constants.EXPECTED_NEW_CAMPAIGN_TITLE, newCampaignPage.getTitle(), "The current title is not the expected one")
 
-        newCampaignPage.createCampaign(title, description, mainImage, images)
-//        Thread.sleep(1000)
+        newCampaignPage.fillCampaignData(title, description, mainImage, images)
+        UtilMethods.takeScreenshotAndAttachToAllure("Campaign data filled")
+        assertEquals(title, newCampaignPage.getTitleField(), "The title is not the expected one")
+        assertEquals(description, newCampaignPage.getDescriptionField(), "The description is not the expected one")
+
+        val campaignDetailPage = newCampaignPage.clickCreateCampaignBtn()
+        assertEquals("Golinjam", campaignDetailPage.getTitle(), "The current title is not the expected one")
         UtilMethods.takeScreenshotAndAttachToAllure("Should show the new campaign")
-//        assertEquals(title, newCampaignPage.getText(Selectors.byId("nameCampaign")), "The title is not the expected one")
     }
 
-    @ParameterizedTest @Tag("smoke") @Tag("character")
+    @ParameterizedTest
+//    @Tag("smoke")
+    @Tag("character")
     @MethodSource("com.dicelogger.testing.dataProviders.Data#characterData")
     fun createCharacter() {
         val charactersPage = sidebar.clickCharactersBtn()
-//        Thread.sleep(1000)
         assertEquals(Constants.CHARACTERS_URL, charactersPage.getPageUrl(), "The current URL is not the expected one")
         assertEquals(Constants.EXPECTED_CHARACTERS_TITLE, charactersPage.getTitle(), "The current title is not the expected one")
 
         val newCharacterPage = charactersPage.clickNewCharacterBtn()
-//        Thread.sleep(1000)
         assertEquals(Constants.NEW_CHARACTERS_URL, newCharacterPage.getPageUrl(), "The current URL is not the expected one")
-
 
     }
 
     @Test
     fun readManuals() {
         val manualsPage = sidebar.clickManualsBtn()
-//        Thread.sleep(1000)
         assertEquals(Constants.MANUALS_URL, manualsPage.getPageUrl(), "The current URL is not the expected one")
         assertEquals(Constants.EXPECTED_MANUALS_TITLE, manualsPage.getTitle(), "The current title is not the expected one")
 

@@ -19,6 +19,7 @@ class Constants {
         const val EXPECTED_SIGNUP_TITLE = "Crear cuenta"
         const val EXPECTED_HOMEPAGE_TITLE = "¡Bienvenido a Dicelogger!"
         const val EXPECTED_CAMPAIGNS_TITLE = "Mis campañas"
+        const val EXPECTED_NEW_CAMPAIGN_TITLE = "Crear campaña\n" + "Campañas\n" + "/\n" + "Plantillas\n" + "/\n" + "Formulario"
         const val EXPECTED_CHARACTERS_TITLE = "Mis personajes"
         const val EXPECTED_MANUALS_TITLE = "Manuales"
     }

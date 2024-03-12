@@ -1,7 +1,6 @@
 package com.dicelogger.testing.pages
 
 import com.codeborne.selenide.Selectors
-import com.codeborne.selenide.Selectors.byCssSelector
 import com.codeborne.selenide.Selectors.byId
 import org.openqa.selenium.By
 

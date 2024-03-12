@@ -63,7 +63,8 @@ abstract class BasePage<T : BasePage<T>> {
     }
 
     fun uploadFile(filePath: String, locator: By) {
-        `$`(locator).shouldBe(visible).uploadFromClasspath(filePath)
+//        `$`(locator).shouldBe(visible).uploadFromClasspath(filePath)
+        `$`(locator).uploadFromClasspath(filePath)
     }
 
     fun clickSvgObjectWithJs(locator: By) {

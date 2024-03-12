@@ -10,6 +10,7 @@ class NewCampaignPage : BasePage<NewCampaignPage>() {
     private val titleField = Selectors.byId("nameCampaign")
     private val descriptionField = Selectors.byId("description")
     private val uploadMainImageBtn = Selectors.byName("image")
+//    private val uploadMainImageBtn = Selectors.byCssSelector(".ImageInput_imageInput__kdc7C input[type='file']")
     private val uploadImagesBtn = Selectors.byName("extraImages")
     private val createCampaignBtn = Selectors.byCssSelector("button[type='submit']")
 
@@ -17,12 +18,24 @@ class NewCampaignPage : BasePage<NewCampaignPage>() {
         return getText(pageTitle)
     }
 
+    fun getTitleField(): String {
+        val field = Selectors.byId("nameCampaign")
+        return getText(field)
+    }
+
+    fun getDescriptionField(): String {
+        val field = Selectors.byId("description")
+        return getText(field)
+    }
+
     fun writeTitle(title: String) {
-        setValueWithJs(title, titleField)
+        sendText(title, titleField)
+//        setValueWithJs(title, titleField)
     }
 
     fun writeDescription(description: String) {
-        setValueWithJs(description, descriptionField)
+        sendText(description, descriptionField)
+//        setValueWithJs(description, descriptionField)
     }
 
     fun uploadMainImage(image: String) {
@@ -33,11 +46,15 @@ class NewCampaignPage : BasePage<NewCampaignPage>() {
         images.forEach { uploadFile(it, uploadImagesBtn) }
     }
 
-    fun createCampaign(title: String, description: String, mainImage: String, images: List<String>) {
+    fun clickCreateCampaignBtn() : CampaignDetailPage {
+        click(createCampaignBtn)
+        return CampaignDetailPage().waitForPageLoad()
+    }
+
+    fun fillCampaignData(title: String, description: String, mainImage: String, images: List<String>){
         writeTitle(title)
         writeDescription(description)
         uploadMainImage(mainImage)
         uploadImages(images)
-        click(createCampaignBtn)
     }
 }

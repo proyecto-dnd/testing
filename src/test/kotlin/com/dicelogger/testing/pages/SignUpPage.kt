@@ -33,12 +33,12 @@ class SignUpPage : BasePage<SignUpPage>() {
         sendText(password, this.password)
     }
 
-    fun clickSubmitBtn(): LandingPage {
+    fun clickSubmitBtn(): HomePage {
         click(submitBtn)
-        return LandingPage().waitForSignUpPageLoad()
+        return HomePage().waitForPageLoad()
     }
 
-    fun fillForm(username: String, displayname: String, email: String, password: String): LandingPage {
+    fun fillForm(username: String, displayname: String, email: String, password: String): HomePage {
         enterUsername(username)
         enterDisplayname(displayname)
         enterEmail(email)
