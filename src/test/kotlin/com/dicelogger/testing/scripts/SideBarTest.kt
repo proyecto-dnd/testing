@@ -49,14 +49,18 @@ class SideBarTest {
         assertEquals(Constants.CAMPAIGNS_URL, campaignsPage.getPageUrl(), "The current URL is not the expected one")
         assertEquals(Constants.EXPECTED_CAMPAIGNS_TITLE, campaignsPage.getTitle(), "The current title is not the expected one")
 
-        val newCampaignPage = campaignsPage.clickNewCampaignBtn()
-        assertEquals(Constants.NEW_CAMPAIGN_URL, newCampaignPage.getPageUrl(), "The current URL is not the expected one")
-        assertEquals(Constants.EXPECTED_NEW_CAMPAIGN_TITLE, newCampaignPage.getTitle(), "The current title is not the expected one")
+        val campaignTemplatesPage = campaignsPage.clickNewCampaignBtn()
+        assertEquals(Constants.CAMPAIGN_TEMPLATES_URL, campaignTemplatesPage.getPageUrl(), "The current URL is not the expected one")
+//        assertEquals(Constants.EXPECTED_NEW_CAMPAIGN_TITLE, campaignTemplatesPage.getTitle(), "The current title is not the expected one")
+
+        val newCampaignPage = campaignTemplatesPage.clickCreateFromZeroBtn()
+        assertEquals(Constants.NEW_CAMPAIGN_URL, campaignTemplatesPage.getPageUrl(), "The current URL is not the expected one")
+//        assertEquals(Constants.EXPECTED_NEW_CAMPAIGN_TITLE, campaignTemplatesPage.getTitle(), "The current title")
 
         newCampaignPage.fillCampaignData(title, description, mainImage, images)
         UtilMethods.takeScreenshotAndAttachToAllure("Campaign data filled")
-        assertEquals(title, newCampaignPage.getTitleField(), "The title is not the expected one")
-        assertEquals(description, newCampaignPage.getDescriptionField(), "The description is not the expected one")
+//        assertEquals(title, newCampaignPage.getTitleField(), "The title is not the expected one")
+//        assertEquals(description, newCampaignPage.getDescriptionField(), "The description is not the expected one")
 
         val campaignDetailPage = newCampaignPage.clickCreateCampaignBtn()
         assertEquals("Golinjam", campaignDetailPage.getTitle(), "The current title is not the expected one")

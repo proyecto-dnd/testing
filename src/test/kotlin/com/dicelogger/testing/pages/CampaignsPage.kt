@@ -13,8 +13,8 @@ class CampaignsPage : BasePage<CampaignsPage>() {
         return getText(pageTitle)
     }
 
-    fun clickNewCampaignBtn(): NewCampaignPage {
+    fun clickNewCampaignBtn(): CampaignTemplatesPage {
         clickSvgObjectWithJs(newCampaignBtn)
-        return NewCampaignPage().waitForPageLoad()
+        return CampaignTemplatesPage().waitForPageLoad()
     }
 }

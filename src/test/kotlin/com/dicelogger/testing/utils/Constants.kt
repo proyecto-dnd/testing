@@ -6,6 +6,7 @@ class Constants {
         const val LANDING_URL = "https://proyecto-dnd.vercel.app/landing/"
         const val SIGNUP_URL = "https://proyecto-dnd.vercel.app/auth/signup"
         const val CAMPAIGNS_URL = "https://proyecto-dnd.vercel.app/campaigns"
+        const val CAMPAIGN_TEMPLATES_URL = "https://proyecto-dnd.vercel.app/campaigns/templates"
         const val NEW_CAMPAIGN_URL = "https://proyecto-dnd.vercel.app/campaigns/new"
         const val CHARACTERS_URL = "https://proyecto-dnd.vercel.app/characters"
         const val NEW_CHARACTERS_URL = "https://proyecto-dnd.vercel.app/characters/new"
