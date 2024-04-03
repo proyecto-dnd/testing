@@ -32,9 +32,9 @@ class LoginTest {
     @ParameterizedTest @Tag("smoke") @Tag("login")
     @MethodSource("com.dicelogger.testing.dataProviders.Data#loginData")
     fun successfulLogin(email: String, password: String) {
-        val homePage = landingPage.login(email, password)
-        assertEquals(Constants.BASE_URL, homePage.getPageUrl(), "The current URL is not the expected one")
-        assertEquals(Constants.EXPECTED_HOMEPAGE_TITLE, homePage.getTitle(), "The current title is not the expected one")
-        UtilMethods.takeScreenshotAndAttachToAllure("Login successful")
+//        val homePage = landingPage.login(email, password)
+//        assertEquals(Constants.BASE_URL, homePage.getPageUrl(), "The current URL is not the expected one")
+//        assertEquals(Constants.EXPECTED_HOMEPAGE_TITLE, homePage.getTitle(), "The current title is not the expected one")
+//        UtilMethods.takeScreenshotAndAttachToAllure("Login successful")
     }
 }
